@@ -20,7 +20,7 @@ We splitted the provided training set into two parts:
 To unsure that our final predictions were good and unbiased, the characteristics of the validation dataset had to reflect as closely as possible the characteristics of the final test set on which we were evaluated. 
 Consequently, we made sure to create a validation set with no devices present in the training set (this was one important feature of the final test set).
 
-For the feature matrix used for predictions, we created a table so that each message was associated with the list of stations that received it together with new features described here:
+For the feature matrix used for predictions, we created a table so that each message was associated with the list of stations that received it together with new features described below:
 
 - d_keep: limit of distance to keep, expressed according to the rssi (measuring the received signal strength)
 - newrssi: penalty introduced at rssi level
