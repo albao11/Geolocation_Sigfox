@@ -31,8 +31,8 @@ For the feature matrix used for predictions, we created a table so that each mes
 
 The last feature (distance) proved to be very useful to reduce errors made in geolocation. 
 However, calculating this distance required an estimate of the latitudes and longitudes of the messages. 
-But the latter are in fine the quantities we seek to calculate. 
-Note that in the case of our validation dataset, we already have the ground truth for latitudes and longitudes, 
+Note that the latter are in fine the quantities we seek to calculate. 
+In the case of our validation dataset, we already have the ground truth for latitudes and longitudes, 
 but this is not the case for the final test set on which we were evaluated. 
 Therefore, we chose to proceed with the calculation of the message positions as if we did not know
 the ground truth. More specifically, we used a 2 iterations procedure:
