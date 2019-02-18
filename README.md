@@ -46,3 +46,5 @@ features bs_lng_centroid and bs_lat_centroid. Then, we prepared our feature matr
 The prediction of the final locations was performed using the Extra Trees Regressor of scikit-learn. On our validation dataset, we obtained an error cumulative probability at 80 % of 2800 meters.
 
 The code and a detailed analysis of the data and our methodology to compute the predictions is given in the jupyter notebook: **TP_geoloc.ipynb**.
+
+An HTML export of the notebook can be found in **TP_geoloc_VF.zip**. This zip file contains an HTLM visualization of the notebook together with image files.
