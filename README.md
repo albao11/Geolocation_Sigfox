@@ -16,7 +16,7 @@ Two datasets were provided:
 We splitted the provided training set into two parts:
 
 - A training dataset
-- A validation dataset that allowed us to check the performance of our predictions on messages for which we know the exact positions.
+- A validation dataset that allowed us to check the performance of our predictions on messages for which we knew the exact positions.
 To unsure that our final predictions were good and unbiased, the characteristics of the validation dataset had to reflect as closely as possible the characteristics of the final test set on which we were evaluated. 
 Consequently, we made sure to create a validation set with no devices present in the training set (this was one important feature of the final test set).
 
