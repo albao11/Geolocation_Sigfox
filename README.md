@@ -22,12 +22,13 @@ Consequently, we made sure to create a validation set with no devices present in
 
 For the feature matrix used for predictions, we created a table so that each message was associated with the list of stations that received it as well as with new features described here:
 
-d_keep: limit of distance to keep, expressed according to the rssi (measuring the received signal strength)
-newrssi: penalty introduced at rssi level
-bs_lng_centroid: centroid of longitudes of stations having seen the same message
-bs_lat_centroid: centroid of latitudes of stations having seen the same message
-bs_count_mess: giving more weight to the most powerful stations
-distance: distance between the message and the station that received it (calculated using the Haversine formula).
+- d_keep: limit of distance to keep, expressed according to the rssi (measuring the received signal strength)
+- newrssi: penalty introduced at rssi level
+- bs_lng_centroid: centroid of longitudes of stations having seen the same message
+- bs_lat_centroid: centroid of latitudes of stations having seen the same message
+- bs_count_mess: giving more weight to the most powerful stations
+- distance: distance between the message and the station that received it (calculated using the Haversine formula).
+
 The last feature (distance) proved to be very useful to reduce errors made in geolocation. 
 However, calculating this distance requires an estimate of the latitudes and longitudes of the messages. 
 But the latter are in fine the quantities we seek to calculate. 
