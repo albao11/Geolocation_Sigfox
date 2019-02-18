@@ -20,7 +20,7 @@ We splitted the provided training set into two parts:
 To unsure that our final predictions were good and unbiased, the characteristics of the validation dataset had to reflect as closely as possible the characteristics of the final test set on which we were evaluated. 
 Consequently, we made sure to create a validation set with no devices present in the training set (this was one important feature of the final test set).
 
-For the feature matrix used for predictions, we created a table so that each message was associated with the list of stations that received it as well as with new features described here:
+For the feature matrix used for predictions, we created a table so that each message was associated with the list of stations that received it together with new features described here:
 
 - d_keep: limit of distance to keep, expressed according to the rssi (measuring the received signal strength)
 - newrssi: penalty introduced at rssi level
@@ -30,16 +30,18 @@ For the feature matrix used for predictions, we created a table so that each mes
 - distance: distance between the message and the station that received it (calculated using the Haversine formula).
 
 The last feature (distance) proved to be very useful to reduce errors made in geolocation. 
-However, calculating this distance requires an estimate of the latitudes and longitudes of the messages. 
+However, calculating this distance required an estimate of the latitudes and longitudes of the messages. 
 But the latter are in fine the quantities we seek to calculate. 
 Note that in the case of our validation dataset, we already have the ground truth for latitudes and longitudes, 
 but this is not the case for the final test set on which we were evaluated. 
-Therefore, we chose to proceed with the calculations of the positions of the messages as if we did not have 
-the truth ground, bu using a 2 iterations procedure:
+Therefore, we chose to proceed with the calculation of the message positions as if we did not know
+the ground truth. More specifically, we used a 2 iterations procedure:
 
-- During the first iteration: a rough estimate of the latitudes and longitudes of the messages is obtained. 
-This estimate allows us to calculate the distance feature. One can then also correct the position of the stations 
+- During the first iteration: a rough estimate of the latitudes and longitudes of the messages was obtained. 
+This estimate allowed us to calculate the distance feature. Then, we could also correct the position of the stations 
 located in abnormal locations.
-- During the second iteration: first the positions of the new corrected stations are used to calculate the 
-features bs_lng_centroid and bs_lat_centroid. Then we prepare our feature matrix 
+- During the second iteration: first the positions of the new corrected stations were used to calculate the 
+features bs_lng_centroid and bs_lat_centroid. Then, we prepared our feature matrix 
 (including d_keep, newrrsi, bs_count_mess, etc.) to predict more accurately the message positions.
+
+The code and a detailed analysis of the data and our methodology to compute the predictions is given in the jupyter notebook: **TP_geoloc.ipynb**.
