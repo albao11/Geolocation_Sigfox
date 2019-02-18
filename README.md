@@ -4,7 +4,7 @@ Contributors: Alba Ordoñez, Karine Petrus, Ioan Catana, Stéphane Mulard
 # Geolocation of messages sent by connected devices
 
 ## Context 
-The purpose of this work consisted of finding the exact position of a set of messages sent by connected devices that could be or not in motion. This information had to be retrieved from data received by Sigfox stations which captured the messages. 
+The purpose of this work consisted of finding the exact position of a set of messages sent by connected devices that could be or not in motion. This information had to be retrieved from data received by Sigfox stations which recorded the messages. 
 
 Two datasets were provided:
 
