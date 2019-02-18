@@ -38,10 +38,11 @@ Therefore, we chose to proceed with the calculation of the message positions as 
 the ground truth. More specifically, we used a 2 iterations procedure:
 
 - During the first iteration: a rough estimate of the latitudes and longitudes of the messages was obtained. 
-This estimate allowed us to calculate the distance feature. Then, we could also correct the position of the stations 
-located in abnormal locations.
+This estimate allowed us to calculate the distance feature. Then, we could also correct the position of the abnormally located stations.
 - During the second iteration: first the positions of the new corrected stations were used to calculate the 
 features bs_lng_centroid and bs_lat_centroid. Then, we prepared our feature matrix 
 (including d_keep, newrrsi, bs_count_mess, etc.) to predict more accurately the message positions.
+
+The prediction of the final locations was performed using the Extra Trees Regressor of scikit-learn. On our validation dataset, we obtained an error cumulative probability at 80 % of 2800 meters.
 
 The code and a detailed analysis of the data and our methodology to compute the predictions is given in the jupyter notebook: **TP_geoloc.ipynb**.
